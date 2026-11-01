@@ -1,8 +1,8 @@
-// Stretch, section 10: keep the session in sessionStorage, so a reload doesn't log you out.
+// Section 10: keep the session in sessionStorage, so a reload doesn't log you out.
 import { beforeEach, expect, test } from "vitest";
 import { screen } from "@testing-library/react";
-import { stubFetch } from "../support/fetch.js";
-import { header, logInFromHeader, renderApp } from "../support/app.jsx";
+import { stubFetch } from "./support/fetch.js";
+import { header, logInFromHeader, renderApp } from "./support/app.jsx";
 
 beforeEach(() => {
   stubFetch();

@@ -42,7 +42,7 @@ npm run test:all       # both
 | 13 Forms (pure part) | `src/s13-forms.js` | `node --test test/s13.test.js` |
 | 12–13 The DOM | `web/form.js` | `npm run web` → open http://localhost:5500/web/ |
 | 15 Build your own useState | `src/s15-state.js` | `node --test test/s15.test.js` |
-| 15 — stretch: a smarter `setState` | `src/s15-state.js` | `node --test test/stretch/s15.stretch.test.js` |
+| 15 A smarter `setState` | `src/s15-state.js` | `node --test test/s15-smarter.test.js` |
 | 15 The counter, four stages | `web/counter.js` | `npm run web` → open http://localhost:5500/web/counter.html |
 
 Try any snippet from the doc in a console with the data and all your functions loaded:

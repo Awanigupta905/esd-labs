@@ -1,4 +1,4 @@
-// Stretch (lab day, section 13) — field errors a screen reader can find.
+// Lab day (section 13) — field errors a screen reader can find. (CONTRACT.md §4)
 // An input with an error says so (aria-invalid) and points at its message (aria-describedby),
 // so a screen reader reads "Code, invalid entry, must be 2–4 uppercase letters…".
 import { describe, test, expect, vi } from "vitest";

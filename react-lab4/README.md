@@ -38,10 +38,10 @@ stubs. `npm run carry -- ../react-lab3` copies **yours** over them — 15 files:
 
 **One file by hand:** `src/auth/AuthContext.jsx` — both labs write parts of it, so carry
 leaves it alone. Open it here and in `../react-lab3/src/auth/AuthContext.jsx`, and copy into
-the four TODOs marked "from React Lab 3", in order: `KEY` and `loadSession()` (only if you did
-Lab 3's sessionStorage stretch); the first part of `AuthProvider` — its state, `login()` and
-`logout()`; its context value and `return`; the body of `useAuth()`. (Section 01 of the doc
-walks through it.)
+the four TODOs marked "from React Lab 3", in order: `KEY` and `loadSession()` (Lab 3's
+sessionStorage); the first part of `AuthProvider` — its state, the `sessionStorage` effect,
+`login()` and `logout()`; its context value and `return`; the body of `useAuth()`. (Section
+01 of the doc walks through it.)
 
 It worked when `npm run dev` is your Lab 3 app again — log in, enroll, My courses, log out —
 and `npm test` says `27 failed | 7 passed (34)`: the 7 are things your Lab 3 app already does

@@ -37,23 +37,23 @@ const BY_HAND = [
   {
     file: "src/auth/AuthContext.jsx",
     steps: [
-      "KEY and loadSession() — Lab 3's sessionStorage stretch (this lab's tests need it)",
-      "the first part of AuthProvider: its state, login() and logout() (and the stretch's effect)",
+      "KEY and loadSession() — Lab 3's sessionStorage (§10, step 4; this lab's tests need it)",
+      "the first part of AuthProvider: its state, the sessionStorage effect, login() and logout()",
       "the end of AuthProvider: the context value and the return",
       "the body of useAuth()",
     ],
   },
 ];
 
-// Parts of the previous lab this lab's tests rely on (some were stretch there). Carry warns
-// when a file in the previous folder doesn't contain the text in `has`.
+// Parts of the previous lab this lab's tests rely on. Carry warns when a file in the previous
+// folder doesn't contain the text in `has`.
 const NEEDS = [
   { file: "src/auth/AuthContext.jsx", has: "sessionStorage.",
-    say: "keep the session in sessionStorage (React Lab 3 §10, stretch) — test/expiry.test.jsx needs it" },
+    say: "keep the session in sessionStorage (React Lab 3 §10, step 4) — test/expiry.test.jsx needs it" },
   { file: "src/pages/Layout.jsx", has: "state=",
-    say: "the header's Log in link remembers where you were (React Lab 3 §11, stretch) — test/expiry, test/conflicts and the in-lab tests need it" },
-  { file: "src/courses/AddCourseForm.jsx", has: "fieldErrors",
-    say: "each fieldErrors message under its field (React Lab 2, stretch) — one in-lab test needs it" },
+    say: "the header's Log in link remembers where you were (React Lab 3 §11) — test/expiry, test/conflicts and the in-lab tests need it" },
+  { file: "src/courses/AddCourseForm.jsx", has: "aria-describedby",
+    say: "field errors a screen reader can find: aria-describedby, and role=\"alert\" on the message (React Lab 2 §13) — two in-lab tests need them" },
 ];
 
 // What this lab then changes in the copied files, and when.
@@ -135,8 +135,8 @@ if (unfinished.length) {
 
 const lacking = NEEDS.filter(({ file, has }) => existsSync(join(from, file)) && !readFileSync(join(from, file), "utf8").includes(has));
 if (lacking.length) {
-  out(`\nThis lab's tests also need these parts of your ${PREVIOUS.label} folder (some were stretch`);
-  out(`exercises), and they don't seem to be in ${fromShown}. If you skipped them, do them now:`);
+  out(`\nThis lab's tests also need these parts of your ${PREVIOUS.label}, and they don't seem to be`);
+  out(`in ${fromShown}. Finish them there and carry again — or here:`);
   for (const n of lacking) out(`  - ${n.file}: ${n.say}`);
 }
 

@@ -1,7 +1,7 @@
-// Section 15 — stretch: updater functions and skipping unchanged values (Object.is)
+// Section 15 — a smarter setState: updater functions and skipping unchanged values (Object.is)
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { useState } from "../../src/s15-state.js";
+import { useState } from "../src/s15-state.js";
 
 test("setState accepts an updater function", () => {
   const [getCount, setCount] = useState(0, () => {});

@@ -48,13 +48,13 @@ const BY_HAND = [
   },
 ];
 
-// Parts of the previous lab this lab's tests rely on (some were stretch there). Carry warns
-// when a file in the previous folder doesn't contain the text in `has`.
+// Parts of the previous lab this lab's tests rely on. Carry warns when a file in the previous
+// folder doesn't contain the text in `has`.
 const NEEDS = [
   { file: "src/auth/AuthContext.jsx", has: "sessionStorage.",
-    say: "keep the session in sessionStorage (React Lab 3 §10, stretch) — test/google-login.test.jsx needs it" },
+    say: "keep the session in sessionStorage (React Lab 3 §10, step 4) — test/google-login.test.jsx needs it" },
   { file: "src/pages/Layout.jsx", has: "role}",
-    say: "the header shows the user's role, e.g. STUDENT (React Lab 3 §10, stretch) — test/google-login.test.jsx needs it" },
+    say: "the header shows the user's role, e.g. STUDENT (React Lab 3 §10) — test/google-login.test.jsx needs it" },
 ];
 
 // What this lab then changes in the copied files, and when.
@@ -137,8 +137,8 @@ if (unfinished.length) {
 
 const lacking = NEEDS.filter(({ file, has }) => existsSync(join(from, file)) && !readFileSync(join(from, file), "utf8").includes(has));
 if (lacking.length) {
-  out(`\nThis lab's tests also need these parts of your ${PREVIOUS.label} folder (some were stretch`);
-  out(`exercises), and they don't seem to be in ${fromShown}. If you skipped them, do them now:`);
+  out(`\nThis lab's tests also need these parts of your ${PREVIOUS.label}, and they don't seem to be`);
+  out(`in ${fromShown}. Finish them there and carry again — or here:`);
   for (const n of lacking) out(`  - ${n.file}: ${n.say}`);
 }
 

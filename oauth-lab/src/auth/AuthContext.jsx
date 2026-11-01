@@ -30,7 +30,7 @@ import { apiFetch } from "../api/client.js";
 
 const AuthContext = createContext(null);
 
-// TODO — from React Lab 4 (React Lab 3's sessionStorage stretch): copy what keeping the
+// TODO — from React Lab 4 (React Lab 3's sessionStorage, §10): copy what keeping the
 // session in sessionStorage needs from outside AuthProvider here — the key, and how you read
 // the saved session. (A Google session must survive a reload too: a test checks it.)
 

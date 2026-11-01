@@ -4,7 +4,8 @@
 //   const { user, token, login, logout } = useAuth();   in any component or hook inside it
 //
 //   user    null, or the logged-in user from GET /api/users/me: { id, email, fullName, role, createdAt }
-//   token   null, or the JWT from POST /api/auth/login. Kept in memory (React state) only.
+//   token   null, or the JWT from POST /api/auth/login. Kept in React state, with a copy in
+//           sessionStorage so a reload doesn't log you out (section 10, step 4).
 //   login(email, password)  POST /api/auth/login, then GET /api/users/me with the new token,
 //                           then store both. On failure it throws the ApiError (401 "Invalid
 //                           email or password") and changes nothing.
@@ -15,7 +16,7 @@ import { apiFetch } from "../api/client.js";
 
 const AuthContext = createContext(null);
 
-// Stretch (section 10): a reload logs you out, because the session lives only in memory.
+// TODO (section 10, step 4): a reload logs you out, because the session lives only in memory.
 // To survive a reload, start from what sessionStorage holds, and save every change to it.
 
 export function AuthProvider({ children }) {

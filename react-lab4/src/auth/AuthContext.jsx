@@ -28,9 +28,9 @@ import { apiFetch } from "../api/client.js";
 
 const AuthContext = createContext(null);
 
-// TODO — from React Lab 3 (§10, stretch): what keeping the session in sessionStorage needs from
-// outside AuthProvider — the key, and how you read the saved session. This lab's tests need it
-// (test/expiry.test.jsx): if you skipped that stretch in Lab 3, write it now.
+// TODO — from React Lab 3 (§10, step 4): what keeping the session in sessionStorage needs
+// from outside AuthProvider — the key, and how you read the saved session. This lab's tests
+// need it (test/expiry.test.jsx).
 
 export function AuthProvider({ children }) {
   // TODO (section 05): an `expired` state (false to start). sessionExpired() also needs
@@ -38,8 +38,8 @@ export function AuthProvider({ children }) {
   // The placeholder below keeps the app running until you do; replace it.
   const expired = false;
 
-  // TODO — from React Lab 3 (§10): YOUR AuthProvider's first part — its state, login() and
-  // logout() (and the sessionStorage effect, if you did the stretch).
+  // TODO — from React Lab 3 (§10): YOUR AuthProvider's first part — its state, the
+  // sessionStorage effect, login() and logout().
   // Then section 05 adds one line to login(): clear `expired` once the new session is stored.
 
   // TODO (section 05): sessionExpired() — navigate to /login (replace, with { from: location }

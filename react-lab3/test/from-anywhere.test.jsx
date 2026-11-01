@@ -1,8 +1,8 @@
-// Stretch, section 11: the header's "Log in" link remembers where you were.
+// Section 11: the header's "Log in" link remembers where you were.
 import { beforeEach, expect, test } from "vitest";
 import { screen } from "@testing-library/react";
-import { stubFetch } from "../support/fetch.js";
-import { header, renderApp, submitLogin } from "../support/app.jsx";
+import { stubFetch } from "./support/fetch.js";
+import { header, renderApp, submitLogin } from "./support/app.jsx";
 
 beforeEach(() => {
   stubFetch();

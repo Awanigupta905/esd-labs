@@ -11,7 +11,7 @@ page from section 08.
 
 | File | What it gives you |
 | --- | --- |
-| `src/courses/AddCourseForm.jsx` | `<AddCourseForm onAdd={fn} />` — the course form from Lab 2: controlled fields, `fieldErrors` under each field, the error's message in a `role="alert"`. Calls `await onAdd(draft)`; shows whatever `onAdd` throws. |
+| `src/courses/AddCourseForm.jsx` | `<AddCourseForm onAdd={fn} />` — the course form from Lab 2: controlled fields, `fieldErrors` under each field (its input `aria-describedby` the message), the error's message in a `role="alert"`. Calls `await onAdd(draft)`; shows whatever `onAdd` throws. |
 | `src/courses/useCourse.js` | Yours, from Lab 3, with sections 06 and 08 done: `useCourse(id)` → `{ course, status, error, enroll }`, and `useAuth().api` already in it. `update` and `remove` don't exist yet: you add them, and return them too. |
 | `src/admin/NewCoursePage.jsx` | The pattern: a page that saves through a hook and lets the form show errors. |
 | `src/admin/EditCoursePage.jsx` | The page you write (a TODO now). |

@@ -139,6 +139,9 @@ export function AddCourseForm({ onAdd })
 - Success → clear the form and the error. Failure → keep what was typed; show
   `error.message` above the button, and each `error.fieldErrors` entry directly under its
   own input (not inside the `<label>`).
+- Errors a screen reader can find: an input with a `fieldErrors` entry has
+  `aria-invalid="true"` and `aria-describedby` set to its message's `id`; the message
+  above the button has `role="alert"`.
 - Never calls `apiFetch` or `fetch` itself.
 
 ### `src/courses/CoursesPage.jsx` — puts them together

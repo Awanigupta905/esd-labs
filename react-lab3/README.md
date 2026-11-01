@@ -28,7 +28,9 @@ page are Lab 2's stubs. `npm run carry -- ../react-lab2` copies **yours** over t
 `src/courses/useCourses.js`, `CoursesView.jsx`, `AddCourseForm.jsx` and `CoursesPage.jsx`
 (whatever it replaces is kept in `.carry-backup/`). Nothing to merge by hand. It worked
 when `npm run dev` lists the twenty courses on the home page again. If it says a file
-still throws "TODO", that part of your Lab 2 isn't finished.
+still throws "TODO", that part of your Lab 2 isn't finished. The in-lab task reuses your
+`AddCourseForm`, and its test finds the form's message by `role="alert"` (Lab 2, section
+13): carry warns if that's missing.
 
 This lab then makes three small changes to those files — the doc says when: section 06
 (each course's name becomes a link), section 09 (`useCourses` sends the token), section
@@ -58,10 +60,10 @@ npm run test:all                 # everything
 | 05 — stretch: active links | `src/pages/Layout.jsx` | `test/stretch/navlink.test.jsx` |
 | 06 The course page | `src/courses/CoursesView.jsx` (yours, from Lab 2), `src/courses/useCourse.js`, `src/courses/CourseDetail.jsx` | `test/detail.test.jsx` |
 | 09 The token | `src/courses/useCourses.js` (yours, from Lab 2) | `inlab/admin.test.jsx` |
-| 10 Logging in | `src/auth/AuthContext.jsx`, `src/pages/LoginPage.jsx`, `src/pages/Layout.jsx` | `test/auth.test.jsx` |
-| 10 — stretch: survive a reload; role badge | `src/auth/AuthContext.jsx`, `src/pages/Layout.jsx` | `test/stretch/session.test.jsx`, `test/stretch/badge.test.jsx` |
+| 10 Logging in, the role badge | `src/auth/AuthContext.jsx`, `src/pages/LoginPage.jsx`, `src/pages/Layout.jsx` | `test/auth.test.jsx`, `test/badge.test.jsx` |
+| 10 Survive a reload (`sessionStorage`) | `src/auth/AuthContext.jsx` | `test/session.test.jsx` |
 | 11 Protected routes | `src/auth/RequireAuth.jsx` | `test/protected.test.jsx` |
-| 11 — stretch: log in from anywhere | `src/pages/Layout.jsx` | `test/stretch/from-anywhere.test.jsx` |
+| 11 Log in from anywhere | `src/pages/Layout.jsx` | `test/from-anywhere.test.jsx` |
 | 12 My courses | `src/me/useMyEnrollments.js`, `src/me/MyCoursesPage.jsx` | `test/my-courses.test.jsx` |
 | 13 Enrolling | `src/courses/useCourse.js`, `src/courses/CourseDetail.jsx` | `test/enroll.test.jsx` |
 | 15 In the lab (AI) | `src/auth/RequireRole.jsx`, `src/admin/NewCoursePage.jsx`, `App.jsx`, `Layout.jsx`, `src/courses/CoursesPage.jsx` | `inlab/admin.test.jsx` |

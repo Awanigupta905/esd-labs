@@ -1,7 +1,7 @@
-// Stretch, section 10: "Logged in as <name>" with a role badge in the header.
+// Section 10: "Logged in as <name>" with a role badge in the header.
 import { beforeEach, expect, test } from "vitest";
-import { stubFetch } from "../support/fetch.js";
-import { header, logInFromHeader, renderApp } from "../support/app.jsx";
+import { stubFetch } from "./support/fetch.js";
+import { header, logInFromHeader, renderApp } from "./support/app.jsx";
 
 beforeEach(() => {
   stubFetch();
