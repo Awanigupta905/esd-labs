@@ -21,7 +21,7 @@ There is nothing to `npm install`. The tests use Node's built-in test runner.
 **Stretch** is extra: `npm run test:stretch` checks it. Ask about either, any time.
 
 ```bash
-npm test               # core tests — get these to "# fail 0"
+npm test               # core tests — get these to "fail 0"
 npm run test:stretch   # stretch tests
 npm run test:all       # both
 ```
@@ -70,6 +70,6 @@ node predict/modules/main.js   # stretch (section 14)
 
 ## Done means
 
-`npm test` ends with `# fail 0`, the form page and the counter page work, and
+`npm test` ends with `fail 0`, the form page and the counter page work, and
 you've written a prediction for every block in the core predict sheets
 (`closures.js`, `this.js`). Stretch is a bonus.

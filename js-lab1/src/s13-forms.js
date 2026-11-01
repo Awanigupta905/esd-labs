@@ -8,6 +8,7 @@ export function isComplete(values) {
 
 // Turn form values into a course object (the shape the API uses), with a
 // fresh id from nextId. Trims text, upper-cases the code, numbers the credits.
+// Call nextId() for the id; description is null; capacity and seatsLeft are both 60.
 export function toCourse(values, nextId) {
   throw new Error("TODO");
 }

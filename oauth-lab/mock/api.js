@@ -173,7 +173,7 @@ export function createApi({ secret = process.env.MOCK_JWT_SECRET || randomSecret
       const q = query.get("q")?.trim().toLowerCase();
       const list = db.courses
         .filter((c) => !department || c.department.toLowerCase() === department)
-        .filter((c) => !q || c.code.toLowerCase().includes(q) || c.title.toLowerCase().includes(q))
+        .filter((c) => !q || [c.code, c.title].some((text) => text.toLowerCase().includes(q)))
         .map(courseView)
         .sort(byCode);
       return [200, list];

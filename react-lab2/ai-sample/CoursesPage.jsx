@@ -111,7 +111,9 @@ export function CoursesPage() {
                 {course.credits} credits · {course.department} ·{" "}
                 {course.seatsLeft === 0
                   ? "Full"
-                  : `${course.seatsLeft} ${course.seatsLeft === 1 ? "seat" : "seats"} left`}
+                  : course.seatsLeft === 1
+                    ? "1 seat left"
+                    : `${course.seatsLeft} seats left`}
               </span>
             </li>
           ))}
