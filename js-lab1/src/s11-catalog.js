@@ -14,7 +14,7 @@ export function openOnly(courses) {
 
 // Case-insensitive match on code OR title. A blank query returns everything.
 export function searchCourses(courses, query) {
-  if (!query || !query.trim()) {
+  if (typeof query !== "string" || !query.trim()) {
     return courses;
   }
   const lowerQuery = query.toLowerCase();
@@ -29,6 +29,9 @@ export function searchCourses(courses, query) {
 
 // The course with this code (case-insensitive), or undefined.
 export function findByCode(courses, code) {
+  if (typeof code !== "string" && typeof code !== "number") {
+    return undefined;
+  }
   return courses.find((course) =>
     typeof code === "number"
       ? course.id === code
@@ -102,7 +105,7 @@ export function canAdd(planner, courses, courseId, limit = 24) {
   if (!course || course.seatsLeft === 0) {
     return false;
   }
-  if (planner.includes(courseId)) {
+  if (plannerCourses(planner, courses).some((planned) => planned.id === course.id)) {
     return false;
   }
   const newTotal = plannerCredits(planner, courses) + course.credits;
