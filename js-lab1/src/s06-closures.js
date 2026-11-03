@@ -12,7 +12,13 @@ export function createIdGenerator(prefix) {
 
 // A function factory: returns a check that "remembers" the limit.
 export function makeCreditCheck(limit) {
-  return (credits) => credits <= limit;
+  return (courseOrCredits) => {
+    const credits =
+      typeof courseOrCredits === "number"
+        ? courseOrCredits
+        : courseOrCredits.credits;
+    return credits <= limit;
+  };
 }
 
 // A value only a function can change.
