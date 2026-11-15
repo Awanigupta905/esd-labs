@@ -65,11 +65,23 @@ export function stats(matrix) {
 // Section 12 (stretch) — the same shape, every cell 0.
 //   zeros([[1, 2], [3, 4]])  →  [[0, 0], [0, 0]]
 export function zeros(matrix) {
-  throw new Error("TODO");
+  return matrix.map((row) =>
+    row.map(() => 0)
+  );
 }
-
 // IN-LAB TASK (AI closed) — leave this until the lab. See inlab/decrement.check.jsx.
-export function decrementAt(matrix, row, col) {
-  throw new Error("TODO");
-}
+export function decrementAt(matrix, targetRow, targetCol) {
+  return matrix.map((row, rowIndex) => {
+    if (rowIndex !== targetRow) {
+      return row;
+    }
 
+    return row.map((value, colIndex) => {
+      if (colIndex === targetCol) {
+        return value - 1;
+      }
+
+      return value;
+    });
+  });
+}

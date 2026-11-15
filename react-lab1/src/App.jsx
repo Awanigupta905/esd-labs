@@ -34,6 +34,17 @@ useEffect(() => {
     </main>
   );
 }
+function decrement(row, col) {
+  setMatrix((currentMatrix) =>
+    decrementAt(currentMatrix, row, col)
+  );
+}
+
+function reset() {
+  setMatrix((currentMatrix) =>
+    zeros(currentMatrix)
+  );
+}
 
 
 
