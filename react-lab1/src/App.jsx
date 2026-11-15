@@ -8,7 +8,11 @@ import { START, incrementAt, decrementAt, zeros } from "./matrix.js";
 
 export default function App() {
   const [matrix, setMatrix] = useState(START);
-
+useEffect(() => {
+  fetch("/matrix.json")
+    .then((response) => response.json())
+    .then((data) => setMatrix(data));
+}, []);
   function increment(row, col) {
     setMatrix((currentMatrix) =>
       incrementAt(currentMatrix, row, col)
