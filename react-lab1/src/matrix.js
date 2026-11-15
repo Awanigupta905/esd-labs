@@ -16,8 +16,20 @@ export const START = [
 //   incrementAt([[1, 2], [3, 4]], 1, 0)  →  [[1, 2], [4, 4]]
 // Never change `matrix` (the tests freeze it, so changing it throws).
 // Rows you don't touch must stay the SAME arrays; only the changed row is new.
-export function incrementAt(matrix, row, col) {
-  throw new Error("TODO");
+export function incrementAt(matrix, targetRow, targetCol) {
+  return matrix.map((row, rowIndex) => {
+    if (rowIndex !== targetRow) {
+      return row;
+    }
+
+    return row.map((value, colIndex) => {
+      if (colIndex === targetCol) {
+        return value + 1;
+      }
+
+      return value;
+    });
+  });
 }
 
 // Section 09 — numbers worked out from the matrix, never stored.
@@ -37,3 +49,4 @@ export function zeros(matrix) {
 export function decrementAt(matrix, row, col) {
   throw new Error("TODO");
 }
+
